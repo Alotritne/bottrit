@@ -13,7 +13,7 @@
     "BOTNAME": "NMT",
     "PREFIX": ".",
     "ADMINBOT": [
-        "100045403026854",
+        "100045403026854"
     ],
     "DATABASE": {
         "sqlite": {
