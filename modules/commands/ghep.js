@@ -76,7 +76,7 @@ module.exports.handleReaction = async ({ event, api, handleReaction, Currencies}
         api.changeNickname(`${(userData.gender == 2) ? "Chồng của" : (userData.gender == 1) ? "Vợ của" : "Bêđê"} ${userDataRandom.name} ${emoji}`, threadID, userID);
     
         return api.sendMessage({
-            body: `Hai bạn đã ghép đôi thành công và bạn đã bay 1000 đô 💜\n\n  ${emoji} ${userData.name} - ${userDataRandom.name} ${emoji}`,
+            body: `Hai bạn đã ghép đôi thành công 💜\n\n  ${emoji} ${userData.name} - ${userDataRandom.name} ${emoji}`,
             mentions: [{ tag: userData.name, id: userID }, {tag: userDataRandom.name, id: userIDRandom}],
             attachment: [avatarPath, avatarPathRandom],
         }, threadID, async () => {
@@ -90,7 +90,7 @@ module.exports.handleReaction = async ({ event, api, handleReaction, Currencies}
 }
 
 module.exports.run = async ({ event, api }) => {
-  var trutien = 1000;//số tiền trừ đi
+  var trutien = 0;//số tiền trừ đi
   api.sendMessage(`Phí ghép đôi là ${trutien}, bạn có muốn ghép không, reaction tin nhắn này để xác nhận:\n♥ : đồng ý`, event.threadID, (err, info) => {
     global.client.handleReaction.push({
       name: this.config.name, 

@@ -61,7 +61,7 @@ module.exports.run = function({ api, event, args, getText }) {
 		group.forEach(commandGroup => msg += `🐳🐳 ${commandGroup.group.charAt(0).toUpperCase() + commandGroup.group.slice(1)} 🐳🐳\n${commandGroup.cmds.join(', ')}\n\n`);
 		return api.sendMessage(msg + getText("helpList", commands.size, prefix), threadID, async (error, info) =>{
 			if (autoUnsend) {
-				await new Promise(resolve => setTimeout(resolve, delayUnsend * 1000));
+				await new Promise(resolve => setTimeout(resolve, delayUnsend * 60000));
 				return api.unsendMessage(info.messageID);
 			} else return;
 		});

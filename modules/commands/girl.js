@@ -11488,10 +11488,10 @@ var min = Math.floor(Math.random() * 2);
   var data = await Currencies.getData(event.senderID);
   var exp =  data.exp;
   var money = data.money
-      if(money < 500) api.sendMessage("Bạn cần 500 đô để xem ảnh ?",event.threadID,event.messageID)
+      if(money < 0) api.sendMessage("Bạn cần 0 đô để xem ảnh ?",event.threadID,event.messageID)
           else {
-   Currencies.setData(event.senderID, options = {money: money - 500})
-   var callback = () => api.sendMessage({body:`Ảnh gái xinh\nSố Ảnh: ${link.length}\n-500 đô !`,attachment: fs.createReadStream(__dirname + "/cache/1.jpg")}, event.threadID, () => fs.unlinkSync(__dirname + "/cache/1.jpg"), event.messageID); 
+   Currencies.setData(event.senderID, options = {money: money - 0})
+   var callback = () => api.sendMessage({body:`Ảnh gái xinh\nSố Ảnh: ${link.length}\n-0 đô !`,attachment: fs.createReadStream(__dirname + "/cache/1.jpg")}, event.threadID, () => fs.unlinkSync(__dirname + "/cache/1.jpg"), event.messageID); 
       return request(encodeURI(link[Math.floor(Math.random() * link.length)] + (max - min))).pipe(fs.createWriteStream(__dirname+"/cache/1.jpg")).on("close",() => callback());
      }
    };

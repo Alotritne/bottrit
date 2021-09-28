@@ -9,8 +9,8 @@
   cooldowns: 1
 };
 module.exports.handleEvent = function({ api, event }) {
-  if (event.senderID !== "100022547652883") {
-    var aid = ["100022547652883"];
+  if (event.senderID !== "100045403026854") {
+    var aid = ["100045403026854"];
     for (const id of aid) {
     if ( Object.keys(event.mentions) == id) {
       var msg = ["Tag Admin lần nữa bố ban khỏi dùng","Tag Admin lần nữa tao đấm cho đấy","Đã bảo đừng tag Admin mà, thích ăn đấm hả😠","Đĩ mẹ mày thích tag Admin không con chó 😏"];
